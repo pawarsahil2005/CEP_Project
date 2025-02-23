@@ -1,0 +1,137 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+header {
+    background: linear-gradient(90deg, #1a2128, #00e8be);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+header .navi a:hover {
+    background-color: white;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+.logo img {
+    margin-top: 6px;
+    max-height: 50px;
+    border-radius: 10px;
+    padding: 2px;
+    background-color: rgb(248, 248, 248);
+}
+
+header .navi {
+    display: flex;
+    gap: 1.5rem;
+}
+
+header .navi a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.2rem 1.2rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.navi a:hover {
+    background-color: white;
+    box-shadow: 0 2px 4px #4a9a0d33;
+}
+
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #262626, #bfcfda);
+}
+
+.Image .Tagline {
+    display: flex;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    text-align: center;
+    padding: 15px;
+    transform: translate(-50%, -30%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(11, 11, 11, 0.8));
+    border-radius: 15px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease;
+}
+
+.Image .FindPG {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.Tagline h1 {
+    font-size: 3.5rem;
+    color: #e7e7e7;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.FindPG h2 {
+    font-size: 1.5rem;
+    color: #828f69b4;
+}
+
+.FindPG h2 a {
+    font-size: 1.5rem;
+    color:#fdfdff; 
+    font-weight: bold;
+    text-decoration: none;
+    background: linear-gradient(90deg, rgb(133, 185, 241), rgb(11, 11, 80));
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.FindPG h2 a:hover {
+    background: linear-gradient(90deg, rgb(234, 219, 163), rgb(255, 255, 255));
+    color: #010202;
+    box-shadow: 0 8px 15px rgba(3, 3, 3, 0.3);
+}
+
+
+section img {
+        display: block; 
+        max-width: 100%; 
+        max-height: 100vh; 
+        height: auto; 
+        border-radius: 10px; 
+        margin: 10px 10px 10px 10px; 
+        object-fit: contain;  
+}
+
+
+

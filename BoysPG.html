@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PG Finder - Futuristic</title>
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #0f172a, #1e293b);
+            color: #e2e8f0;
+        }
+
+        header {
+            background: linear-gradient(90deg, #00c9ff, #92fe9d);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .pg-listing {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+            gap: 20px;
+        }
+
+        .pg-card {
+            background: #1e293b;
+            border: 1px solid #4a5568;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 255, 255, 0.2);
+        }
+
+        .pg-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 255, 255, 0.4);
+        }
+
+        .pg-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: center;
+          }
+
+        .pg-card-content {
+            padding: 15px;
+        }
+
+        .pg-card-content h3 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #00c9ff;
+            text-transform: uppercase;
+        }
+
+        .pg-card-content p {
+            margin: 8px 0;
+            font-size: 0.95em;
+        }
+
+        .amenities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .amenities span {
+            background: rgba(0, 255, 255, 0.2);
+            color: #00c9ff;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+
+        .pg-card-content a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 12px 20px;
+            background: linear-gradient(90deg, #00c9ff, #92fe9d);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <header>Find Your Futuristic PG</header>
+    <div class="container">
+        <div class="pg-listing">
+        <!--  PG 1 -->
+            <div class="pg-card">
+                <img src="./images/Basweshwar PG/PG1.jpg" alt="Cyber Stays">
+                <div class="pg-card-content">
+                    <h3>Bhaseswar Bawan PG</h3>
+                    <p><strong>Owner :</strong> Ramesh Patil</p>
+                    <p><strong>Price :</strong> ₹3,500/month</p>
+                    <p><strong>Rating :</strong> ⭐ 3.8</p>
+                    <p><strong>Deposit :</strong> ₹4,500</p>
+                    <div class="amenities">
+                        <span>🚀 WiFi</span>
+                        <span>🚗 Parking</span>
+                    </div>
+                    <a href="https://maps.app.goo.gl/7pfV6WJPPgDZMysQ6" target="_blank">🌍 View Location</a>
+                    <a href="tel:+919322755125">📞 Contact</a>
+                </div>
+            </div>  
+            <!-- PG 2  -->
+            <div class="pg-card">
+                <img src="./images/Vridawan PG/Vridhawan PG.png" alt="Cyber Stays">
+                <div class="pg-card-content">
+                    <h3>Vrindavan PG</h3>
+                    <p><strong>Owner :</strong> Manohar Pawar</p>
+                    <p><strong>Price :</strong> ₹3,200/month</p>
+                    <p><strong>Rating :</strong> ⭐ 3.8</p>
+                    <p><strong>Deposit :</strong> ₹6,400 </p>
+                    <div class="amenities">
+                        <span>🚀 WiFi</span>
+                        <span>🚗 Parking</span>
+                        <span>🛅 Security</span>
+                    </div>
+                    <a href="https://maps.app.goo.gl/H8NcrbeELqGMti4m7" target="_blank">🌍 View Location</a>
+                    <a href="tel:+919657724715 ">📞 Contact</a>
+                </div>
+            </div>    
+            <!-- PG 3 -->
+            <div class="pg-card">
+                <img src="./images/Shrinath Baba Krupaprasad/Screenshot 2025-02-22 095427.png" alt="Cyber Stays">
+                <div class="pg-card-content">
+                    <h3>Shrinath Baba Krupaprasad</h3>
+                    <p><strong>Owner :</strong> Shimpi</p>
+                    <p><strong>Price :</strong> ₹3,750/month</p>
+                    <p><strong>Rating :</strong> ⭐ </p>
+                    <p><strong>Deposit :</strong> ₹5,000</p>
+                    <div class="amenities">
+                        <span>🚗 Parking</span>
+                        <span>🛅 Security</span>
+                    </div>
+                    <a href="https://maps.app.goo.gl/7pfV6WJPPgDZMysQ6" target="_blank">🌍 View Location</a>
+                    <a href="tel:+919890042495">📞 Contact</a>
+                </div>
+            </div>  
+            <!-- PG 4 -->
+            <div class="pg-card">
+                <img src="./images/Tanvir Villa/Screenshot 2025-02-22 100450.png" alt="Cyber Stays">
+                <div class="pg-card-content">
+                    <h3>Tanvir Villa </h3>
+                    <p><strong>Owner :</strong> Tanvir</p>
+                    <p><strong>Price :</strong> ₹4,000/month</p>
+                    <p><strong>Rating :</strong> ⭐ </p>
+                    <p><strong>Deposit :</strong> ₹12,000</p>
+                    <div class="amenities">
+                        <span>🚀 WiFi</span>
+                        <span>🚗 Parking</span>
+                        <span>🛅 Security</span>
+                    </div>
+                    <a href="https://maps.app.goo.gl/7pfV6WJPPgDZMysQ6" target="_blank">🌍 View Location</a>
+                    <a href="tel:+919096138325" >📞 Contact</a>
+                </div>
+            </div> 
+    </div>
+</body>
+</html>
+
+
+
