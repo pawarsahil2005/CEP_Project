@@ -3,130 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PGFinder - Authentication</title>
+    <title>PGFinder - Login & Sign Up</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
+        /* Global Reset */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
 
+        /* Body Background */
         body {
-            background: #030303;
-            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: radial-gradient(circle, #0F172A, #1E293B);
+            color: #ffffff;
+        }
+
+        .container {
+            display: flex;
+            width: 780px;
+            height: 520px;
+            background: rgba(30, 41, 59, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(40, 169, 224, 0.6);
+            overflow: hidden;
+        }
+
+        /* Left Section */
+        .left-section {
+            width: 50%;
+            background: linear-gradient(135deg, #28A9E0, #00C6FF);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            padding: 20px;
-        }
-
-        .logo {
-            font-size: 30px;
-            font-weight: bold;
-            color: cyan;
-            margin-bottom: 20px;
             text-align: center;
-        }
-
-        .container {
-            background: rgba(255, 255, 255, 0.1);
             padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-            text-align: center;
-            max-width: 400px;
-            width: 100%;
+            color: #fff;
         }
 
-        h2 {
+        .left-section img {
+            width: 150px; /* Increased from 90px */
             margin-bottom: 15px;
-            color: cyan;
         }
 
-        label {
-            display: block;
-            text-align: left;
-            margin-top: 10px;
-            font-size: 14px;
-            color: cyan;
+
+        .left-section h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
         }
 
-        input {
-            width: 100%;
-            padding: 10px;
+        .left-section p {
+            font-size: 1rem;
             margin-top: 5px;
-            border: none;
-            border-radius: 6px;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
+            opacity: 0.9;
         }
 
-        button {
-            width: 100%;
-            padding: 12px;
-            margin-top: 20px;
-            border: none;
-            border-radius: 8px;
-            background: cyan;
-            color: #0a0a0a;
-            font-size: 16px;
+        /* Right Section */
+        .right-section {
+            width: 50%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 30px;
+            position: absolute;
+            top: 20px;
+        }
+
+        .tab-label {
+            font-size: 1.2rem;
             cursor: pointer;
+            color: #00C6FF;
+            font-weight: bold;
+            padding-bottom: 4px;
             transition: 0.3s;
         }
 
-        button:hover {
-            background: white;
+        .tab-label.active {
+            border-bottom: 3px solid #00C6FF;
         }
 
-        .extra-links {
+        .form-container {
+            display: none;
+            width: 100%;
+        }
+
+        .form-container.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Input Fields */
+        .input-group {
+            display: flex;
+            align-items: center;
+            border: 2px solid #00C6FF;
+            padding: 12px;
+            border-radius: 8px;
             margin-top: 15px;
-            font-size: 14px;
+            background: rgba(15, 23, 42, 0.8);
         }
 
-        .extra-links a {
-            color: cyan;
-            text-decoration: none;
+        .input-group input {
+            border: none;
+            outline: none;
+            background: transparent;
+            width: 100%;
+            color: #ffffff;
+            font-size: 1rem;
+            padding: 5px;
+            margin-left: 10px;
         }
 
-        .extra-links a:hover {
+        .input-group i {
+            color: #00C6FF;
+            font-size: 1.3rem;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            margin-top: 20px;
+            border: none;
+            background: #00C6FF;
+            color: #06141A;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .submit-btn:hover {
+            background: #008ECF;
+            transform: scale(1.05);
+        }
+
+        /* Forgot Password */
+        .forgot-password {
+            margin-top: 10px;
+            text-align: right;
+            font-size: 0.9rem;
+            color: #00C6FF;
+            cursor: pointer;
             text-decoration: underline;
         }
 
-        @media (max-width: 480px) {
+        /* Responsive Design */
+        @media (max-width: 768px) {
             .container {
-                padding: 20px;
-                max-width: 90%;
+                flex-direction: column;
+                width: 90%;
+                height: auto;
             }
 
-            .logo {
-                font-size: 24px;
+            .left-section {
+                width: 100%;
+                padding: 30px;
+            }
+
+            .right-section {
+                width: 100%;
+                padding: 30px;
+            }
+
+            .tabs {
+                position: static;
+                justify-content: center;
+                margin-bottom: 20px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="logo">PGFinder</div>
-    <div class="container" id="signin">
-        <h2>Sign In</h2>
-        <form action="./homepage.html" onsubmit="return validateForm()">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required placeholder="Enter your username">
-
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required placeholder="Enter your password">
-
-            <button type="submit">Sign In</button>
-        </form>
-
-        <div class="extra-links">
-            <p><a href="./Forgotpassword.html">Forgot Password?</a></p>
-            <p>Don't have an account? <a href="./SignUp.html">Sign up</a></p>
+    <div class="container">
+        <div class="left-section">
+            <img src="NAME OF THE WEBSITE.png" alt="PGFinder Logo">
+            <h2>Welcome to PGFinder</h2>
+            <p>Your Perfect Stay Awaits!</p>
         </div>
+
+        <div class="right-section">
+            <div class="tabs">
+                <span class="tab-label active" data-target="login-form">Login</span>
+                <span class="tab-label" data-target="signup-form">Sign Up</span>
+            </div>
+
+            <!-- Login Form -->
+            <div id="login-form" class="form-container active">
+                <form>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">LOGIN</button>
+                </form>
+            </div>
+
+            <!-- Sign Up Form -->
+            <div id="signup-form" class="form-container">
+                <form>
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Create Account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.tab-label').forEach(tab => {
+            tab.addEventListener('click', function () {
+                document.querySelectorAll('.tab-label').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+
+                document.querySelectorAll('.form-container').forEach(form => form.classList.remove('active'));
+                document.getElementById(this.dataset.target).classList.add('active');
+            });
+        });
+    </script>
+
 </body>
 </html>
